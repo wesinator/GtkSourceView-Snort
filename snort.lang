@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+This Source Code Form is subject to the terms of the Mozilla Public
+License, v. 2.0. If a copy of the MPL was not distributed with this file,
+You can obtain one at http://mozilla.org/MPL/2.0/.
+-->
+
+<language id="snort" _name="Snort/Suricata" version="2.0" _section="Other">
+  <metadata>
+    <property name="mimetypes">text/snort;text/x-snort;text/suricata;text/x-suricata</property>
+    <property name="globs">*.rules;*.snort</property>
+    <property name="line-comment-start">#</property>
+  </metadata>
+
+  <styles>
+    <style id="comment"           _name="Comment"               map-to="def:comment"/>
+    <style id="keyword"           _name="Keyword"               map-to="def:keyword"/>
+    <style id="action"            _name="Action"                map-to="def:builtin"/>
+    <style id="string"            _name="String"                map-to="def:string"/>
+    <style id="decimal"           _name="Decimal number"        map-to="def:decimal"/>
+  </styles>
+
+  <definitions>
+
+    <context id="string" style-ref="string" end-at-line-end="true" class="string" class-disabled="no-spell-check">
+      <start>"</start>
+      <end>"</end>
+      <include>
+        <context ref="def:line-continue"/>
+      </include>
+    </context>
+
+    <context id="decimal" style-ref="decimal">
+      <match extended="true">
+        (?&lt;![\w\.])
+        (0|[1-9][0-9]*)
+        (?![\w\.])
+      </match>
+    </context>
+
+    <context id="action">
+       <keyword>activate</keyword>
+       <keyword>alert</keyword>
+       <keyword>drop</keyword>
+       <keyword>dynamic</keyword>
+       <keyword>log</keyword>
+       <keyword>pass</keyword>
+       <keyword>reject</keyword>
+       <keyword>sdrop</keyword>
+    </context>
+
+    <context id="keywords" style-ref="keyword">
+        <keyword>$EXTERNAL_NET</keyword>
+        <keyword>$HOME_NET</keyword>
+        <keyword>$HTTP_PORTS</keyword>
+
+        <keyword>any</keyword>
+        <keyword>dcerpc</keyword>
+        <keyword>dnp3</keyword>
+        <keyword>dns</keyword>
+        <keyword>enip</keyword>
+        <keyword>ftp</keyword>
+        <keyword>http</keyword>
+        <keyword>icmp</keyword>
+        <keyword>imap</keyword>
+        <keyword>ip</keyword>
+        <keyword>modbus</keyword>
+        <keyword>msn</keyword>
+        <keyword>nfs</keyword>
+        <keyword>ntp</keyword>
+        <keyword>smb</keyword>
+        <keyword>smtp</keyword>
+        <keyword>ssh</keyword>
+        <keyword>tcp</keyword>
+        <keyword>tls</keyword>
+        <keyword>udp</keyword>
+
+        <keyword>ack</keyword>
+        <keyword>app-layer-event</keyword>
+        <keyword>app-layer-protocol</keyword>
+        <keyword>appid</keyword>
+        <keyword>asn1</keyword>
+        <keyword>base64_data</keyword>
+        <keyword>base64_decode</keyword>
+        <keyword>byte_extract</keyword>
+        <keyword>byte_jump</keyword>
+        <keyword>byte_test</keyword>
+        <keyword>classtype</keyword>
+        <keyword>content</keyword>
+        <keyword>dce_iface</keyword>
+        <keyword>dce_opnum</keyword>
+        <keyword>dce_stub_data</keyword>
+        <keyword>decode-event</keyword>
+        <keyword>depth</keyword>
+        <keyword>detection_filter</keyword>
+        <keyword>distance</keyword>
+        <keyword>dns_query</keyword>
+        <keyword>dsize</keyword>
+        <keyword>engine-event</keyword>
+        <keyword>fast_pattern</keyword>
+        <keyword>file_data</keyword>
+        <keyword>fileext</keyword>
+        <keyword>filemagic</keyword>
+        <keyword>filemd5</keyword>
+        <keyword>filename</keyword>
+        <keyword>filesize</keyword>
+        <keyword>filestore</keyword>
+        <keyword>flags</keyword>
+        <keyword>flow</keyword>
+        <keyword>flowbits</keyword>
+        <keyword>flowint</keyword>
+        <keyword>flowvar</keyword>
+        <keyword>__flowvar__postmatch__</keyword>
+        <keyword>fragbits</keyword>
+        <keyword>fragoffset</keyword>
+        <keyword>ftpbounce</keyword>
+        <keyword>geoip</keyword>
+        <keyword>gid</keyword>
+        <keyword>hostbits</keyword>
+        <keyword>http_client_body</keyword>
+        <keyword>http_cookie</keyword>
+        <keyword>http_header</keyword>
+        <keyword>http_host</keyword>
+        <keyword>http_method</keyword>
+        <keyword>http_raw_header</keyword>
+        <keyword>http_raw_host</keyword>
+        <keyword>http_raw_uri</keyword>
+        <keyword>http_server_body</keyword>
+        <keyword>http_stat_code</keyword>
+        <keyword>http_stat_msg</keyword>
+        <keyword>http_uri</keyword>
+        <keyword>http_user_agent</keyword>
+        <keyword>icmp_id</keyword>
+        <keyword>icmp_seq</keyword>
+        <keyword>icmpv4-csum</keyword>
+        <keyword>icmpv6-csum</keyword>
+        <keyword>icode</keyword>
+        <keyword>id</keyword>
+        <keyword>ip_proto</keyword>
+        <keyword>ipopts</keyword>
+        <keyword>iprep</keyword>
+        <keyword>ipv4-csum</keyword>
+        <keyword>isdataat</keyword>
+        <keyword>itype</keyword>
+        <keyword>l3_proto</keyword>
+        <keyword>lua</keyword>
+        <keyword>metadata</keyword>
+        <keyword>modbus</keyword>
+        <keyword>msg</keyword>
+        <keyword>name</keyword>
+        <keyword>nfq_set_mark</keyword>
+        <keyword>noalert</keyword>
+        <keyword>nocase</keyword>
+        <keyword>offset</keyword>
+        <keyword>pcre</keyword>
+        <keyword>pkt_data</keyword>
+        <keyword>pktvar</keyword>
+        <keyword>priority</keyword>
+        <keyword>rawbytes</keyword>
+        <keyword>reference</keyword>
+        <keyword>replace</keyword>
+        <keyword>rev</keyword>
+        <keyword>rpc</keyword>
+        <keyword>sameip</keyword>
+        <keyword>seq</keyword>
+        <keyword>sid</keyword>
+        <keyword>ssh.protoversion</keyword>
+        <keyword>ssh.softwareversion</keyword>
+        <keyword>ssl_state</keyword>
+        <keyword>ssl_version</keyword>
+        <keyword>stream-event</keyword>
+        <keyword>stream_size</keyword>
+        <keyword>tag</keyword>
+        <keyword>tcpv4-csum</keyword>
+        <keyword>tcpv6-csum</keyword>
+        <keyword>template</keyword>
+        <keyword>threshold</keyword>
+        <keyword>tls.fingerprint</keyword>
+        <keyword>tls.issuerdn</keyword>
+        <keyword>tls.store</keyword>
+        <keyword>tls.subject</keyword>
+        <keyword>tls.version</keyword>
+        <keyword>tls_sni</keyword>
+        <keyword>tos</keyword>
+        <keyword>ttl</keyword>
+        <keyword>udpv4-csum</keyword>
+        <keyword>udpv6-csum</keyword>
+        <keyword>uricontent</keyword>
+        <keyword>urilen</keyword>
+        <keyword>window</keyword>
+        <keyword>within</keyword>
+        <keyword>xbits</keyword>
+    </context>
+
+    <!--Main context-->
+    <context id="snort" class="no-spell-check">
+      <include>
+        <context ref="def:shell-like-comment" style-ref="comment"/>
+        <context ref="string"/>
+        <context ref="decimal"/>
+        <context ref="action"/>
+        <context ref="keywords"/>
+      </include>
+    </context>
+
+  </definitions>
+</language>
