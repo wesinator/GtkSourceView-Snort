@@ -17,6 +17,7 @@ You can obtain one at http://mozilla.org/MPL/2.0/.
     <style id="comment"           _name="Comment"               map-to="def:comment"/>
     <style id="keyword"           _name="Keyword"               map-to="def:keyword"/>
     <style id="action"            _name="Action"                map-to="def:builtin"/>
+    <style id="var"               _name="Variable"              map-to="def:preprocessor"/>
     <style id="string"            _name="String"                map-to="def:string"/>
     <style id="decimal"           _name="Decimal number"        map-to="def:decimal"/>
   </styles>
@@ -49,12 +50,15 @@ You can obtain one at http://mozilla.org/MPL/2.0/.
        <keyword>reject</keyword>
        <keyword>sdrop</keyword>
     </context>
+    
+    <context id="vars" style-ref="var">
+       <prefix>\$</prefix>
+       <keyword>EXTERNAL_NET</keyword>
+       <keyword>HOME_NET</keyword>
+       <keyword>HTTP_PORTS</keyword>
+    </context>
 
     <context id="keywords" style-ref="keyword">
-        <keyword>$EXTERNAL_NET</keyword>
-        <keyword>$HOME_NET</keyword>
-        <keyword>$HTTP_PORTS</keyword>
-
         <keyword>any</keyword>
         <keyword>dcerpc</keyword>
         <keyword>dnp3</keyword>
@@ -200,6 +204,7 @@ You can obtain one at http://mozilla.org/MPL/2.0/.
         <context ref="string"/>
         <context ref="decimal"/>
         <context ref="actions"/>
+        <context ref="vars"/>
         <context ref="keywords"/>
       </include>
     </context>
