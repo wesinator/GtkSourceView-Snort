@@ -59,16 +59,21 @@ You can obtain one at http://mozilla.org/MPL/2.0/.
     </context>
 
     <context id="keywords" style-ref="keyword">
-        <keyword>any</keyword>
+        <keyword>icmp</keyword>
+        <keyword>ip</keyword>
+        <keyword>tcp</keyword>
+        <keyword>udp</keyword>
+        
         <keyword>dcerpc</keyword>
+        <keyword>dhcp</keyword>
         <keyword>dnp3</keyword>
         <keyword>dns</keyword>
         <keyword>enip</keyword>
         <keyword>ftp</keyword>
         <keyword>http</keyword>
-        <keyword>icmp</keyword>
+        <keyword>ikev2</keyword>
         <keyword>imap</keyword>
-        <keyword>ip</keyword>
+        <keyword>krb5</keyword>
         <keyword>modbus</keyword>
         <keyword>msn</keyword>
         <keyword>nfs</keyword>
@@ -76,11 +81,10 @@ You can obtain one at http://mozilla.org/MPL/2.0/.
         <keyword>smb</keyword>
         <keyword>smtp</keyword>
         <keyword>ssh</keyword>
-        <keyword>tcp</keyword>
         <keyword>tls</keyword>
-        <keyword>udp</keyword>
 
         <keyword>ack</keyword>
+        <keyword>any</keyword>
         <keyword>app-layer-event</keyword>
         <keyword>app-layer-protocol</keyword>
         <keyword>appid</keyword>
