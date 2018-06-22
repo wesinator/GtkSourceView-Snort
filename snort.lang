@@ -39,7 +39,7 @@ You can obtain one at http://mozilla.org/MPL/2.0/.
       </match>
     </context>
 
-    <context id="action">
+    <context id="actions" style-ref="action">
        <keyword>activate</keyword>
        <keyword>alert</keyword>
        <keyword>drop</keyword>
@@ -199,7 +199,7 @@ You can obtain one at http://mozilla.org/MPL/2.0/.
         <context ref="def:shell-like-comment" style-ref="comment"/>
         <context ref="string"/>
         <context ref="decimal"/>
-        <context ref="action"/>
+        <context ref="actions"/>
         <context ref="keywords"/>
       </include>
     </context>
