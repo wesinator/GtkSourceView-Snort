@@ -6,7 +6,7 @@ License, v. 2.0. If a copy of the MPL was not distributed with this file,
 You can obtain one at http://mozilla.org/MPL/2.0/.
 -->
 
-<language id="snort" _name="Snort/Suricata" version="2.0" _section="Other">
+<language id="snort-suricata" _name="Snort/Suricata" version="2.0" _section="Other">
   <metadata>
     <property name="mimetypes">text/snort;text/x-snort;text/suricata;text/x-suricata</property>
     <property name="globs">*.rules;*.snort</property>
@@ -202,7 +202,7 @@ You can obtain one at http://mozilla.org/MPL/2.0/.
     </context>
 
     <!--Main context-->
-    <context id="snort" class="no-spell-check">
+    <context id="snort-suricata" class="no-spell-check">
       <include>
         <context ref="def:shell-like-comment" style-ref="comment"/>
         <context ref="string"/>
