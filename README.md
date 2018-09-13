@@ -5,6 +5,6 @@ This package provides Snort and Suricata IDS rule syntax highlighting for Gtk-ba
 Save `snort-suricata.lang` to `~/.local/share/gtksourceview-3.0/language-specs/`:
 
 ```sh
-mkdir -p ~/.local/share/gtksourceview-3.0/language-specs/
+mkdir -pv ~/.local/share/gtksourceview-3.0/language-specs/
 cp ./snort-suricata.lang ~/.local/share/gtksourceview-3.0/language-specs/
 ```
